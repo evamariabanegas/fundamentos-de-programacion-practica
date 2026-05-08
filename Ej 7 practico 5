@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, e, f, det, dx, dy;
+    // Sistema: 
+    // aX + bY = c
+    // dX + eY = f (usamos f en lugar de d repetida para el termino independiente)
+    
+    printf("Ecuacion 1 (a b c): "); scanf("%f %f %f", &a, &b, &c);
+    printf("Ecuacion 2 (d e f): "); scanf("%f %f %f", &d, &e, &f);
+
+    det = a * e - b * d;
+
+    if (det != 0) {
+        dx = c * e - b * f;
+        dy = a * f - c * d;
+        printf("Solucion unica: X = %.2f, Y = %.2f\n", dx / det, dy / det);
+    } else {
+        if ((a * f - c * d == 0) && (b * f - c * e == 0)) {
+            printf("Existen infinitas soluciones (Sistema Compatible Indeterminado).\n");
+        } else {
+            printf("No existe solucion (Sistema Incompatible).\n");
+        }
+    }
+
+    printf("\nTipos de soluciones posibles:\n");
+    printf("1. Solucion Unica (Determinante != 0)\n");
+    printf("2. Infinitas Soluciones (Determinante = 0 y dependientes)\n");
+    printf("3. Sin Solucion (Determinante = 0 e independientes)\n");
+
+    return 0;
+}
