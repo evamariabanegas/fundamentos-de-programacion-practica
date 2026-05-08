@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int n, u, d, c, m;
+    printf("Ingrese un numero entero (< 10000): ");
+    scanf("%d", &n);
+
+    m = n / 1000;
+    c = (n % 1000) / 100;
+    d = (n % 100) / 10;
+    u = n % 10;
+
+    printf("m:%d, c:%d, d:%d, u:%d\n", m, c, d, u);
+    return 0;
+}
