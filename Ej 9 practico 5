@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int op;
+    float l, r, b, h;
+    printf("1. Cuadrado\n2. Circulo\n3. Triangulo\nSeleccione: ");
+    scanf("%d", &op);
+
+    switch(op) {
+        case 1: 
+            printf("Lado: "); scanf("%f", &l);
+            printf("Area: %.2f\n", l*l); break;
+        case 2: 
+            printf("Radio: "); scanf("%f", &r);
+            printf("Area: %.2f\n", 3.14159 * r * r); break;
+        case 3: 
+            printf("Base y Altura: "); scanf("%f %f", &b, &h);
+            printf("Area: %.2f\n", (b*h)/2); break;
+        default: printf("Opcion no valida.\n");
+    }
+    return 0;
+}
