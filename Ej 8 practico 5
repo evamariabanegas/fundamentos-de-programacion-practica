@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int c1, c2, c3, c4;
+    float p1, p2, p3, p4, total;
+
+    printf("Cant. Hamburguesas (3Bs): "); scanf("%d", &c1);
+    printf("Cant. H. con Queso (5Bs): "); scanf("%d", &c2);
+    printf("Cant. Papas Fritas (2Bs): "); scanf("%d", &c3);
+    printf("Cant. Soda (2.5Bs): "); scanf("%d", &c4);
+
+    p1 = c1 * 3.0; p2 = c2 * 5.0; p3 = c3 * 2.0; p4 = c4 * 2.5;
+    total = p1 + p2 + p3 + p4;
+
+    printf("\nTOTAL PARCIALES:\nHamb: %.2f\nQueso: %.2f\nPapas: %.2f\nSoda: %.2f\n", p1, p2, p3, p4);
+    printf("TOTAL: %.2f Bs.\n", total);
+    return 0;
+}
