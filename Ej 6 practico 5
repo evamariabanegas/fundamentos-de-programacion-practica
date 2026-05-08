@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c, disc, x1, x2, real, imag;
+    printf("Ingrese coeficientes a, b y c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    if (a == 0) {
+        if (b != 0) printf("Ecuacion lineal: x = %.2f\n", -c / b);
+        else printf("Ecuacion degenerada (sin solucion o infinitas).\n");
+    } else {
+        disc = b*b - 4*a*c;
+        if (disc > 0) {
+            x1 = (-b + sqrt(disc)) / (2*a);
+            x2 = (-b - sqrt(disc)) / (2*a);
+            printf("Dos raices reales: %.2f y %.2f\n", x1, x2);
+        } else if (disc == 0) {
+            printf("Raiz real unica: %.2f\n", -b / (2*a));
+        } else {
+            real = -b / (2*a);
+            imag = sqrt(-disc) / (2*a);
+            printf("Raices complejas: %.2f + %.2fi y %.2f - %.2fi\n", real, imag, real, imag);
+        }
+    }
+    return 0;
+}
