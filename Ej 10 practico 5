@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    float p1, p2, prac, final, nf;
+    int faltas;
+    char continuar;
+
+    do {
+        printf("\nNotas (P1 P2 Practico Final): ");
+        scanf("%f %f %f %f", &p1, &p2, &prac, &final);
+        printf("Numero de faltas: ");
+        scanf("%d", &faltas);
+
+        if (faltas > 9) { // 20% de 48 es 9.6
+            nf = 0;
+            printf("Examen anulado por faltas.\n");
+        } else {
+            nf = (p1 + p2) * 0.20 + (prac * 0.20) + (final * 0.40);
+        }
+
+        printf("Nota Final: %.2f\n", nf);
+        if (nf >= 51) printf("APROBADO\n");
+        else printf("REPROBADO\n");
+
+        printf("¿Otro alumno? (s/n): ");
+        scanf(" %c", &continuar);
+    } while (continuar == 's' || continuar == 'S');
+
+    return 0;
+}
